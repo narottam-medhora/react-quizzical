@@ -145,3 +145,52 @@ export const ResultsContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+
+  @media only screen and (min-width: 320px) {
+    top: 45%;
+    left: 40%;
+  }
+
+  @media only screen and (min-width: 768px) {
+    left: 45%;
+  }
+
+  .lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid black;
+    border-color: black transparent black transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  p {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    margin-block: 2rem;
+  }
+`;

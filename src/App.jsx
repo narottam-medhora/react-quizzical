@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 
 // * IMPORT COMPONENTS
 import StartPage from "./views/StartPage";
+import QuizPage from "./views/QuizPage";
+import Loading from "./components/Loading";
 
 // * IMPORT STYLED COMPONENTS
 import { AppContainer } from "./styles/style";
-import QuizPage from "./views/QuizPage";
 
 // * IMPORT HELPER FUNCTIONS
 import formatData from "./util/formatData";
@@ -32,7 +33,7 @@ export default function App() {
   }, []);
 
   if (!questions) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   // * SANITY CHECK
