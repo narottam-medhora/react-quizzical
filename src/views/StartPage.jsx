@@ -1,9 +1,6 @@
 // * IMPORT STYLED COMPONENTS
 import { StartPageContainer } from "../styles/style";
 
-// * IMPORT COMPONENTS
-import Blobs from "../components/Blobs";
-
 export default function StartPage({ setStartQuiz }) {
   // handleClick will change the state of startQuiz
   function handleClick() {

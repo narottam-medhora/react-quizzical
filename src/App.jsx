@@ -12,12 +12,16 @@ import { AppContainer } from "./styles/style";
 import formatData from "./util/formatData";
 import answersArray from "./util/answersArray";
 
+// * IMPORT IMAGES
+import UpperBlob from "./assets/upper_blob.svg";
+import LowerBlob from "./assets/lower_blob.svg";
+
 // * IMPORT CUSTOM HOOKS
 import useWindowSize from "./hooks/useWindowSize";
 
 export default function App() {
   const [questions, setQuestions] = useState(null);
-  const [startQuiz, setStartQuiz] = useState(false);
+  const [startQuiz, setStartQuiz] = useState(true);
   const [selectedAnswers, setSelectedAnswers] = useState(answersArray());
   const [checkAnswers, setCheckAnswers] = useState(false);
   const [score, setScore] = useState(null);
@@ -44,7 +48,7 @@ export default function App() {
   // });
 
   return (
-    <AppContainer>
+    <AppContainer width={dms.width} height={dms.height}>
       {!startQuiz ? (
         <StartPage setStartQuiz={setStartQuiz} />
       ) : (
@@ -60,6 +64,8 @@ export default function App() {
           dms={dms}
         />
       )}
+      <img className="upper-blob" src={UpperBlob}></img>
+      <img className="lower-blob" src={LowerBlob}></img>
     </AppContainer>
   );
 }

@@ -1,5 +1,4 @@
 // * IMPORT COMPONENTS
-import Blobs from "../components/Blobs";
 import Questions from "../components/Questions";
 import Answers from "../components/Answers";
 import Score from "../components/Score";
@@ -97,10 +96,8 @@ export default function QuizPage({
 
   return (
     <QuizPageContainer>
-      <Blobs />
       {questionElements}
       <ResultsContainer>
-        {checkAnswers && <Score score={score} />}
         <CheckAnswers
           checkAnswers={checkAnswers}
           setCheckAnswers={setCheckAnswers}
@@ -111,6 +108,7 @@ export default function QuizPage({
           setSelectedAnswers={setSelectedAnswers}
           useData={useData}
         />
+        {checkAnswers && <Score score={score} />}
       </ResultsContainer>
       {checkAnswers && <Confetti width={dms.width} height={dms.height} />}
     </QuizPageContainer>
