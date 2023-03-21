@@ -93,7 +93,10 @@ export default function QuizPage({
 
     return (
       <QuestionContainer key={nanoid()}>
-        <Questions question={he.decode(obj.question)} />
+        <Questions
+          question={he.decode(obj.question)}
+          difficulty={obj.difficulty}
+        />
         <AnswerContainer>{answerElements}</AnswerContainer>
       </QuestionContainer>
     );
