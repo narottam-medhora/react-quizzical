@@ -106,6 +106,7 @@ export const QuizPageContainer = styled.div`
       padding: 11px;
 
       color: #f5f7fb;
+      cursor: pointer;
     }
   }
 
@@ -221,5 +222,40 @@ export const LoadingContainer = styled.div`
     font-family: "Inter", sans-serif;
     font-size: 1rem;
     margin-block: 2rem;
+  }
+`;
+
+export const AlertContainer = styled.div`
+  background-color: #f5f7fb;
+  border: 2px solid #b83b5e;
+  color: #293264;
+  border-radius: 15px;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  p {
+    padding: 1rem;
+  }
+
+  button {
+    font-size: 16px;
+    background: none;
+    border: 2px solid #293264;
+    border-radius: 15px;
+    padding: 1rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 30%;
+    min-height: 60px;
   }
 `;

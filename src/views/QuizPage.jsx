@@ -1,9 +1,12 @@
+import { useState } from "react";
+
 // * IMPORT COMPONENTS
 import Questions from "../components/Questions";
 import Answers from "../components/Answers";
 import Score from "../components/Score";
 import CheckAnswers from "../components/CheckAnswers";
 import Confetti from "react-confetti";
+import Alert from "../components/Alert";
 
 // * IMPORT LIBRARIES
 import he from "he";
@@ -29,6 +32,8 @@ export default function QuizPage({
   useData,
   dms,
 }) {
+  const [showAlert, setShowAlert] = useState(false);
+
   // * COMPONENT LOGIC
   // A function that stores the selected answers in state
   function selectAnswer(event, index) {
@@ -56,7 +61,7 @@ export default function QuizPage({
     let isQuizComplete = areAllQuestionsAnswered.every((bool) => bool === true);
 
     if (!isQuizComplete) {
-      alert("You haven't answered all the questions!");
+      setShowAlert(true);
       return;
     } else {
       setCheckAnswers((prevState) => !prevState);
@@ -111,6 +116,7 @@ export default function QuizPage({
         {checkAnswers && <Score score={score} />}
       </ResultsContainer>
       {checkAnswers && <Confetti width={dms.width} height={dms.height} />}
+      <Alert showAlert={showAlert} setShowAlert={setShowAlert} />
     </QuizPageContainer>
   );
 }
